@@ -53,28 +53,24 @@ public class controlMemoria {
     }
 
     public void spacenullWF(int num, String letra) {//Codigo para encontrar los espacios libres en Worst Fit.
-        int contador = 0, box = 0, indice = 0;
+        int contador = 0, box = 0, indice = -1;
         //boolean flag = false;
         for (int i = 0; i < 10; i++) {
-            if ((mn.memoria[i].isEmpty()) && (i != 9)) {
+            if (mn.memoria[i].isEmpty()) {
                 contador++;
-            } else if ((!mn.memoria[i].isEmpty())) {
-                if (i == 9) {
-                    contador++;
-                }
-                if (contador >= num) {
-                    if (contador >= box) {
+            } else if (!mn.memoria[i].isEmpty()) {
+                if ((contador >= num) && (contador >= box)){
                         box = contador;
                         indice = i - box;
-                    }
                 }
                 contador = 0;
             }
         }
-        for (int j = 0; j < num; j++) {
-            mn.memoria[indice + j] = letra;
+        if(indice > -1) {
+            for (int j = 0; j < num; j++) {
+                mn.memoria[indice + j] = letra;
+            }
         }
-        indice = 0;
     }
 
 

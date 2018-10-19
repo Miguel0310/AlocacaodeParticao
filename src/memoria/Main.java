@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static String [] memoria = new String[]{"","A","","","","","B","B","B",""};
+    public static String [] memoria = new String[]{"", "A", "", "", "", "", "B", "B", "B", ""};
     public static int opcao = 0;
 
     public static void main(String args[]){
