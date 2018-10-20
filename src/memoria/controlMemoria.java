@@ -73,7 +73,22 @@ public class controlMemoria {
         }
     }
 
-
+    public void spacenullFF(int num, String letra) {
+        int contador = 0;
+        for (int i = 0; i < 10; i++) {
+            if (mn.memoria[i].isEmpty()) {
+                contador++;
+            } else if(!mn.memoria[i].isEmpty()) {
+                contador = 0;
+            }
+            if (contador == num) {
+                for (int j = 0; j < num; j++) {
+                    mn.memoria[(i) - j] = letra;
+                }
+                break;
+            }
+        }
+    }
 
 
     public void opciones(int C,int D,int E){ //caso1
@@ -91,6 +106,15 @@ public class controlMemoria {
         spacenullWF(C,"C");
         spacenullWF(D,"D");
         spacenullWF(E,"E");
+        for(int i=0;i<10;i++) {
+            System.out.print("|" + mn.memoria[i]);
+        }
+        mn.memoria = new String[]{"", "A", "", "", "", "", "B", "B", "B", ""};
+
+        System.out.println("\nFirstFit");
+        spacenullFF(C,"C");
+        spacenullFF(D,"D");
+        spacenullFF(E,"E");
         for(int i=0;i<10;i++) {
             System.out.print("|" + mn.memoria[i]);
         }
