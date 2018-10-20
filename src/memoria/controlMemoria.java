@@ -54,14 +54,13 @@ public class controlMemoria {
 
     public void spacenullWF(int num, String letra) {//Codigo para encontrar los espacios libres en Worst Fit.
         int contador = 0, box = 0, indice = -1;
-        //boolean flag = false;
         for (int i = 0; i < 10; i++) {
             if (mn.memoria[i].isEmpty()) {
                 contador++;
             } else if (!mn.memoria[i].isEmpty()) {
                 if ((contador >= num) && (contador >= box)){
-                        box = contador;
-                        indice = i - box;
+                    box = contador;
+                    indice = i - box;
                 }
                 contador = 0;
             }
@@ -91,9 +90,9 @@ public class controlMemoria {
     }
 
 
-    public void opciones(int C,int D,int E){ //caso1
+    public void caso1(int C,int D,int E){ //caso1
 
-        System.out.println("BestFit");
+        System.out.println("BestFit:");
         spacenullBF(C, "C");
         spacenullBF(D, "D");
         spacenullBF(E, "E");
@@ -102,7 +101,7 @@ public class controlMemoria {
         }
         mn.memoria = new String[]{"", "A", "", "", "", "", "B", "B", "B", ""};
 
-        System.out.println("\nWorstFit");
+        System.out.println("\nWorstFit:");
         spacenullWF(C,"C");
         spacenullWF(D,"D");
         spacenullWF(E,"E");
@@ -111,7 +110,7 @@ public class controlMemoria {
         }
         mn.memoria = new String[]{"", "A", "", "", "", "", "B", "B", "B", ""};
 
-        System.out.println("\nFirstFit");
+        System.out.println("\nFirstFit:");
         spacenullFF(C,"C");
         spacenullFF(D,"D");
         spacenullFF(E,"E");
@@ -119,10 +118,69 @@ public class controlMemoria {
             System.out.print("|" + mn.memoria[i]);
         }
         mn.memoria = new String[]{"", "A", "", "", "", "", "B", "B", "B", ""};
-
     }
 
-    public void BestFit(int C,int D,int E,int F){//demás casos
+    public void caso2(int C,int D,int E,int F){//demás casos
+        System.out.println("BestFit:");
+        spacenullBF(C, "C");
+        spacenullBF(D, "D");
+        spacenullBF(E, "E");
+        spacenullBF(F, "F");
+        for(int i=0;i<10;i++) {
+            System.out.print("|" + mn.memoria[i]);
+        }
+        mn.memoria = new String[]{"", "", "A", "", "", "", "B", "", "", ""};
 
+        System.out.println("\nWorstFit:");
+        spacenullWF(C,"C");
+        spacenullWF(D,"D");
+        spacenullWF(E,"E");
+        spacenullWF(F,"F");
+        for(int i=0;i<10;i++) {
+            System.out.print("|" + mn.memoria[i]);
+        }
+        mn.memoria = new String[]{"", "", "A", "", "", "", "B", "", "", ""};
+
+        System.out.println("\nFirstFit:");
+        spacenullFF(C,"C");
+        spacenullFF(D,"D");
+        spacenullFF(E,"E");
+        spacenullFF(F,"F");
+        for(int i=0;i<10;i++) {
+            System.out.print("|" + mn.memoria[i]);
+        }
+        mn.memoria = new String[]{"", "", "A", "", "", "", "B", "", "", ""};
+    }
+
+    public void caso3(int C,int D, int E, int F){
+        System.out.println("BestFit:");
+        spacenullBF(C, "C");
+        spacenullBF(D, "D");
+        spacenullBF(E, "E");
+        spacenullBF(F, "F");
+        for(int i=0;i<10;i++) {
+            System.out.print("|" + mn.memoria[i]);
+        }
+        mn.memoria = new String[]{"", "", "A", "", "", "", "B", "", "", "G"};
+
+        System.out.println("\nWorstFit:");
+        spacenullWF(C,"C");
+        spacenullWF(D,"D");
+        spacenullWF(E,"E");
+        spacenullWF(F,"F");
+        for(int i=0;i<10;i++) {
+            System.out.print("|" + mn.memoria[i]);
+        }
+        mn.memoria = new String[]{"", "", "A", "", "", "", "B", "", "", "G"};
+
+        System.out.println("\nFirstFit:");
+        spacenullFF(C,"C");
+        spacenullFF(D,"D");
+        spacenullFF(E,"E");
+        spacenullFF(F,"F");
+        for(int i=0;i<10;i++) {
+            System.out.print("|" + mn.memoria[i]);
+        }
+        mn.memoria = new String[]{"", "", "A", "", "", "", "B", "", "", "G"};
     }
 }
